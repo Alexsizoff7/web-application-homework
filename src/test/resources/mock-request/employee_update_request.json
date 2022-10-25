@@ -1,0 +1,8 @@
+{
+  "firstName": "EmpNewName",
+  "lastName": "EmpNewSurname",
+  "email": "NEWEMAIL",
+  "phoneNumber": "123.123.1234",
+  "departmentId": 2,
+  "salary": 1337
+}

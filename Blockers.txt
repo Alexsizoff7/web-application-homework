@@ -1,0 +1,13 @@
+1) При создании PUT запроса на employees, где изменяется department_id выбрасывается exception
+из-за невозможности обновить другие таблицы типа JOB_HISTORY.
+
+2) В EmployeeResponse получаю всю информацию о Departments, а должен получать только department_id
+
+- добавить реквест классы и валидацию к ним, возвращать только их
+
+- RequestParm offset & limit для getall
+
+
+3) ошибка с hire_date - null при добавлении юзера
+
+4) null pointer при добавлении юзера в departmentId - нужен мэппер?
