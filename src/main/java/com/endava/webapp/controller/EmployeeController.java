@@ -30,7 +30,7 @@ public class EmployeeController {
     private final EmployeeMapper mapper;
 
     @PostMapping
-    public ResponseEntity<EmployeeResponse> addEmployee(@RequestBody EmployeeRequest request) {
+    public ResponseEntity<EmployeeResponse> addEmployee(@Validated @RequestBody EmployeeRequest request) {
         val requestToEmployee = mapper.requestToEmployee(request);
         employeeService.save(requestToEmployee);
         val employeeResponse = mapper.employeeToResponse(requestToEmployee);
@@ -57,7 +57,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EmployeeResponse> updateEmployee(@PathVariable Integer id, @RequestBody EmployeeRequest employee) {
+    public ResponseEntity<EmployeeResponse> updateEmployee(@PathVariable Integer id, @Validated @RequestBody EmployeeRequest employee) {
         Employee updatedEmployee = employeeService.update(id, employee);
         return ResponseEntity.ok(mapper.employeeToResponse(updatedEmployee));
     }

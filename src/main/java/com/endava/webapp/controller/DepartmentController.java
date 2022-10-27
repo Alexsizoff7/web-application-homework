@@ -31,7 +31,8 @@ public class DepartmentController {
     private final DepartmentMapper mapper;
 
     @PostMapping
-    public ResponseEntity<DepartmentResponse> addDepartment(@RequestBody DepartmentRequest request) {
+    public ResponseEntity<DepartmentResponse> addDepartment(
+            @Validated @RequestBody DepartmentRequest request) {
         val requestToDepartment = mapper.requestToDepartment(request);
         departmentService.save(requestToDepartment);
         val departmentResponse = mapper.departmentToResponse(requestToDepartment);
@@ -58,7 +59,8 @@ public class DepartmentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<DepartmentResponse> updateDepartment(@PathVariable Integer id, @RequestBody DepartmentRequest department) {
+    public ResponseEntity<DepartmentResponse> updateDepartment(
+            @PathVariable Integer id, @Validated @RequestBody DepartmentRequest department) {
         Department updatedDepartment = departmentService.update(id, department);
         return ResponseEntity.ok(mapper.departmentToResponse(updatedDepartment));
     }

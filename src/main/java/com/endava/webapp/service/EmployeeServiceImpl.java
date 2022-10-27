@@ -5,6 +5,7 @@ import com.endava.webapp.exception.ResourceNotFoundException;
 import com.endava.webapp.model.Employee;
 import com.endava.webapp.repository.DepartmentRepository;
 import com.endava.webapp.repository.EmployeeRepository;
+import com.endava.webapp.validation.UniqueConstraintValidation;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
     private final DepartmentRepository departmentRepository;
+    private final UniqueConstraintValidation uniqueConstraintValidation;
 
 
     @Override
@@ -50,6 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee save(Employee employee) {
+        uniqueConstraintValidation.employeeEmailOrPhoneAlreadyExistsValidation(employee.getEmail(), employee.getPhoneNumber());
         return employeeRepository.save(employee);
     }
 
