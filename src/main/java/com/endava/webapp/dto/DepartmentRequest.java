@@ -10,7 +10,6 @@ public class DepartmentRequest {
     @NotBlank
     private String departmentName;
 
-//    @NotBlank
     private Integer locationId;
 
     private Integer managerId;

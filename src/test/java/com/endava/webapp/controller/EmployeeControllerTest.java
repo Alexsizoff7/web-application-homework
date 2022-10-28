@@ -13,8 +13,9 @@ class EmployeeControllerTest extends BaseIT {
 
     @Test
     void shouldReturnOk_whenGettingAllEmployees() throws Exception {
-        mockMvc.perform(get("/employees?offset=2&limit=3"))
+        mockMvc.perform(get("/employees?offset={offset}&limit={limit}", 2, 3))
                 .andExpect(status().isOk());
+
     }
 
     @Test

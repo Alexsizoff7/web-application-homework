@@ -50,7 +50,6 @@ public class ControllerExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
-    // TODO - finish exception handling
     @ResponseBody
     @ExceptionHandler(UniqueConstraintViolationException.class)
     public ResponseEntity<ErrorResponse> uniqueConstraintViolationHandler(
