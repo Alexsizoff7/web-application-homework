@@ -1,0 +1,12 @@
+{
+  "firstName": "Nina",
+  "lastName": "Kochar",
+  "email": "nkochhar@com.d",
+  "phoneNumber": "515.123.4568",
+  "departmentId": 1,
+  "salary": 14000,
+  "hireDate": "2003-03-05",
+  "jobId": "AD_VP",
+  "commissionPct": null,
+  "managerId": 100
+}
